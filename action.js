@@ -1,22 +1,40 @@
-let input=document.getElementById('inputValue');
+const input=document.getElementById('inputValue');
 
-let calc=(number)=>{
-    input.value=input.value+number;
+calc = (number) =>{
+    input.value=input.value + number;
 }
 
-let result=()=>{
+result = () =>{
     try{
-        input.value=eval(input.value)
+        const evaluation = eval(input.value);
+        console.log(evaluation);
+        if(evaluation == undefined){
+            input.value = '';
+            alert("Inavild input");
+        }else{
+            input.value = maxZecimal(evaluation);
+        }
     }
     catch(err){
         alert("Invalid input");
     }
 }
 
-function cl(){
-    input.value="";
+cl = () =>{
+    input.value='';
 }
 
-function del(){
+del = () =>{
     input.value=input.value.slice(0,-1);
 }
+
+//Max 10 zecimals
+maxZecimal = (number) =>{
+    if(String(number).split(".")[1]?.length > 2){
+        return number.toFixed(10);
+    }else{
+        return number;
+    }
+}
+  
+

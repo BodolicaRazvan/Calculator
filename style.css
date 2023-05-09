@@ -1,13 +1,24 @@
+:root {
+    --main-grey: #495057;
+    --main-white: #DEE2E6;
+    --egual-yellow: #FFC300;
+    --second-grey: #6C757D;
+    --calm-black: #1D1B26;
+    --input-grey: #32383d;
+}
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     outline: none;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: antiquewhite;
+    background-color: var(--main-grey);
+    color: var(--main-white);
 }
 
 .container{
+    background-color: var(--calm-black);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,39 +26,56 @@
 }
 
 .display{
-    border: 1px solid  black;
     border-radius: 20px;
     padding: 16px;
     display: grid;
-    grid-template-columns: repeat(4,66px);  
+    grid-template-columns: repeat(4fr);
+    justify-items: center;
+    border: 2px solid black;
+    box-shadow: 0px 8px 15px rgba(0,0,0,.4);
 }
 
 input{
     grid-column: span 4;
-    height: 70px;
-    width: 258px;
-    border: none;
-    border: 1px solid  black;
-    border-radius: 32px;
-    color: grey;
+    height: 75px;
+    width: 275px;
+    background-color: var(--input-grey);
     text-align: right;
-    margin: 40px 0px 30px 0px;
+    margin: 30px 0px 20px 0px;
     padding: 20px;
     font-size: 40px;
+    border: 0px;
+    border-radius: 20px;
+}
+
+input::placeholder{
+    color: var(--main-white);
 }
 
 button{
-    border: 1px solid black;
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    font-size: 20px;
-    font-weight: bold;
+    border: 0px;
+    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+    margin: 6px;
+    font-size: 22px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,.4);
+}
+
+button:hover{
+    box-shadow: 0px 15px 20px rgba(0,0,0,.4);
+    transform: translateY(-5px);
+    transition: 0.45;
 }
 
 button:last-of-type{
-    width: 120px;
-    border-radius: 42px;
+    grid-column: span 2;
+    width: 132px;
+    border-radius: 20px;
+    background-color: var(--egual-yellow);
+
 }
 
+.second-buttons{
+    background-color: var(--second-grey);
+}
